@@ -1,4 +1,4 @@
-# My Data Vista
+# My Observation Hub
 
 > A data collection app combined with data visualization tools
 
