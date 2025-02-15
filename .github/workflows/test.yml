@@ -8,11 +8,22 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests
         run: npm test
+
+      - name: Ping Webhook if tests pass
+        if: ${{ success() }}
+        run: |
+          curl -X POST \
+            https://api.vercel.com/v1/integrations/deploy/prj_f6ny5b8gxknmYdrnQF330cqFIKBI/AErwONAhmU \
+            -H "Content-Type: application/json" \
+            -d '{"status":"Tests passed"}'
