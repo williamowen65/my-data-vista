@@ -3,7 +3,7 @@ name: Node.js Tests
 on: [push, pull_request]
 
 jobs:
-  test:
+  server-test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
