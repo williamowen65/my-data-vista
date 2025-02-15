@@ -1,0 +1,32 @@
+{
+  "name": "my-observation-hub",
+  "version": "1.0.0",
+  "description": "A data collection app combined with data visualization tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamowen65/my-observation-hub.git"
+  },
+  "author": "William Owen <william.owen.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/williamowen65/my-observation-hub/issues"
+  },
+  "homepage": "https://github.com/williamowen65/my-observation-hub#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.1.2",
+    "css-loader": "^7.1.2",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}
