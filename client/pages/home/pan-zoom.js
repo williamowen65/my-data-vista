@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const svg = document.getElementById("svg-root");
+    const page = document.getElementById("my-observation-hub-app");
 
         let viewBox = { x: -500, y: -500, width: 1000, height: 1000 };
         let isPanning = false, startX, startY, startViewBoxX, startViewBoxY;
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Mouse down to start panning
-        svg.addEventListener("mousedown", (e) => {
+        page.addEventListener("mousedown", (e) => {
             isPanning = true;
             startX = e.clientX;
             startY = e.clientY;
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Mouse move to pan
-        svg.addEventListener("mousemove", (e) => {
+        page.addEventListener("mousemove", (e) => {
             if (!isPanning) return;
             let dx = (e.clientX - startX) * (viewBox.width / window.innerWidth);
             let dy = (e.clientY - startY) * (viewBox.height / window.innerHeight);
@@ -32,18 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Mouse up to stop panning
-        svg.addEventListener("mouseup", () => {
+        page.addEventListener("mouseup", () => {
             isPanning = false;
             svg.style.cursor = "grab";
         });
 
-        svg.addEventListener("mouseleave", () => {
+        page.addEventListener("mouseleave", () => {
             isPanning = false;
             svg.style.cursor = "grab";
         });
 
         // Zoom with mouse wheel
-        svg.addEventListener("wheel", (e) => {
+        page.addEventListener("wheel", (e) => {
             e.preventDefault();
             let zoom = e.deltaY < 0 ? 1 / zoomFactor : zoomFactor;
             let mouseX = e.clientX / window.innerWidth;
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Handle touch events
-        svg.addEventListener("touchstart", (e) => {
+        page.addEventListener("touchstart", (e) => {
             if (e.touches.length === 1) {
                 // Single finger touch (pan)
                 isPanning = true;
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        svg.addEventListener("touchmove", (e) => {
+        page.addEventListener("touchmove", (e) => {
             if (e.touches.length === 1 && isPanning) {
                 // Pan
                 let dx = (e.touches[0].clientX - startX) * (viewBox.width / window.innerWidth);
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        svg.addEventListener("touchend", () => {
+        page.addEventListener("touchend", () => {
             isPanning = false;
             touchDistance = null;
         });
