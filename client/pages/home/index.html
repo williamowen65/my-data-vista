@@ -50,7 +50,15 @@
         top: 5px;
         background: var(--background-color);
         padding: 3px 5px;
-       
+      }
+
+      #menu-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0px 0px 5px 0px;
       }
     </style>
   </head>
@@ -67,7 +75,12 @@
           <div id="toolbar-top">My Observation Hub</div>
           <div id="dropdown-menu"></div>
         </div>
-        <footer id="menu-bottom"></footer>
+        <footer id="menu-bottom">
+            <button id="recordObservationBtn">
+                Record Observation
+            </button>
+
+        </footer>
       </div>
 
       <svg
