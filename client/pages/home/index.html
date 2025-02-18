@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Observation Hub</title>
     <script src="/home/index.js"></script>
-    <script src="https://kit.fontawesome.com/4550fec5ff.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4550fec5ff.js"
+      crossorigin="anonymous"
+    ></script>
 
     <style>
       :root {
@@ -35,7 +38,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-  
+
         margin: 5px 0px 0px 0px;
       }
       #toolbar-top {
@@ -47,8 +50,6 @@
       #dropdown-menu-trigger {
         position: absolute;
         left: 5px;
-        top: 5px;
-        background: var(--background-color);
         padding: 3px 5px;
       }
 
@@ -59,6 +60,14 @@
         display: flex;
         justify-content: center;
         margin: 0px 0px 5px 0px;
+      }
+      #user-account {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+      button {
+        cursor: pointer;
       }
     </style>
   </head>
@@ -71,15 +80,17 @@
         <div id="menu-top">
           <button id="dropdown-menu-trigger">
             <i class="fa fa-bars"></i>
-          </button>  
+          </button>
           <div id="toolbar-top">My Observation Hub</div>
+          <div id="user-account">
+            <button>
+              <i class="fa fa-user"></i>
+            </button>
+          </div>
           <div id="dropdown-menu"></div>
         </div>
         <footer id="menu-bottom">
-            <button id="recordObservationBtn">
-                Record Observation
-            </button>
-
+          <button id="recordObservationBtn">Record Observation</button>
         </footer>
       </div>
 
